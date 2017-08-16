@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/Bootstrap/css/bootstrap.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-box" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">QQ空间</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-box">
+            <ul class="nav navbar-nav">
+                <li><a href="/">全部相册 <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/up">上传图片</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <!--缩略图-->
+    <div class="row">
+        <form action="/upOk" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>选择文件夹</label>
+                <select class="form-control" name="dirname">
+                    <%for(var i=0;i<dirnames.length;i++){%>
+                    <option><%=dirnames[i]%></option>
+                    <%}%>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>选择图片</label>
+                <input type="file" name="img" multiple>
+            </div>
+            <button type="submit" class="btn btn-success">上传</button>
+        </form>
+    </div>
+</div>
+</body>
+<script src="/Bootstrap/js/jquery.min.js"></script>
+<script src="/Bootstrap/js/bootstrap.js"></script>
+</html>
